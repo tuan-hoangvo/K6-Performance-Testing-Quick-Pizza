@@ -2,6 +2,7 @@ import http from "k6/http";
 import { sleep, check, group } from "k6";
 import exec from "k6/execution";
 import { randomString } from "https://jslib.k6.io/k6-utils/1.2.0/index.js";
+import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 import {
   SmokeOptions,
   AverageStages,
@@ -212,7 +213,7 @@ export function pizzaUserFlow() {
 
 export function handleSummary(data) {
   return {
-    "summary.json": JSON.stringify(data),
+    "summary.html": htmlReport(data),
   };
 }
 
