@@ -2,9 +2,15 @@ pipeline {
     agent any 
 
     stages {
-        stage('Stage 1') {
+        stage('k6') {
             steps {
-                echo 'Hello World'
+                agent {
+                    docker { 
+                        image 'grafana/k6'
+                        args '--entrypoint=""'
+                    }
+                }
+                echo 'k6'
             }
         }
     }
