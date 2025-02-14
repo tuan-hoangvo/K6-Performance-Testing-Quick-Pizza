@@ -3,14 +3,14 @@ pipeline {
 
     stages {
         stage('k6') {
-            steps {
-                agent {
-                    docker { 
-                        image 'grafana/k6'
-                        args '--entrypoint=""'
-                    }
+            agent {
+                docker { 
+                    image 'grafana/k6'
+                    args '--entrypoint=""'
                 }
-                echo 'k6'
+            }
+            steps {
+                sh 'k6'
             }
         }
     }
