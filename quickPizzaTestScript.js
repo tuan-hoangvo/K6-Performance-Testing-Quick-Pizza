@@ -210,6 +210,12 @@ export function pizzaUserFlow() {
   });
 }
 
+export function handleSummary(data) {
+  return {
+    "summary.json": JSON.stringify(data),
+  };
+}
+
 /* Interpreting end-of-test summary report - https://github.com/grafana/k6-learn/blob/main/Modules/II-k6-Foundations/03-Understanding-k6-results.md
     execution: local
     script: .\quickPizzaTestScript.js
