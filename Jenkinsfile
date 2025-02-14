@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 // sh 'mkdir -p testReport'
-                sh 'k6 run quickPizzaTestScript.js --quiet'
+                sh 'k6 run quickPizzaTestScript.js --quiet', reuseNode: true
             }
         }
     }
