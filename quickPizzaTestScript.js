@@ -83,7 +83,7 @@ export const options = {
     "http_reqs{stage:spike}": [{ threshold: "rate > 8" }],
     http_req_failed: [{ threshold: "rate < 0.05" }],
     "http_req_failed{stage:smoke}": [{ threshold: "rate == 0" }],
-    "http_req_failed{stage:load}": [{ threshold: "rate  0.05" }],
+    "http_req_failed{stage:load}": [{ threshold: "rate < 0.05" }],
     "http_req_failed{stage:stress}": [{ threshold: "rate < 0.05" }],
     "http_req_failed{stage:spike}": [{ threshold: "rate < 0.05" }],
   },
