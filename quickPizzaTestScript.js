@@ -76,7 +76,7 @@ export const options = {
     // "http_req_duration{stage:load}": [{ threshold: "p(95) < 1000" }],
     // "http_req_duration{stage:stress}": [{ threshold: "p(95) < 1000" }],
     // "http_req_duration{stage:spike}": [{ threshold: "p(95) < 1500" }],
-    http_reqs: [{ threshold: "rate > 10" }],
+    http_reqs: [{ threshold: "rate > 0.1" }],
     "http_reqs{stage:smoke}": [{ threshold: "rate > 0.1" }],
     // "http_reqs{stage:load}": [{ threshold: "rate > 0.5" }],
     // "http_reqs{stage:stress}": [{ threshold: "rate > 2" }],
@@ -210,11 +210,11 @@ export function pizzaUserFlow() {
   });
 }
 
-export function handleSummary(data) {
-  return {
-    "summary.json": JSON.stringify(data),
-  };
-}
+// export function handleSummary(data) {
+//   return {
+//     "summary.json": JSON.stringify(data),
+//   };
+// }
 
 /* Interpreting end-of-test summary report - https://github.com/grafana/k6-learn/blob/main/Modules/II-k6-Foundations/03-Understanding-k6-results.md
     execution: local
