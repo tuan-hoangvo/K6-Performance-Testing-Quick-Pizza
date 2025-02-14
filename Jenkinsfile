@@ -10,7 +10,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'k6'
+                sh 'k6 run quickPizzaTestScript.js'
             }
         }
     }
