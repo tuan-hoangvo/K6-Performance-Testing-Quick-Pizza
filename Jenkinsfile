@@ -7,11 +7,12 @@ pipeline {
                 docker { 
                     image 'grafana/k6'
                     args '--entrypoint=""'
+                    reuseNode true
                 }
             }
             steps {
                 // sh 'mkdir -p testReport'
-                sh 'k6 run quickPizzaTestScript.js --quiet', reuseNode: true
+                sh 'k6 run quickPizzaTestScript.js --quiet'
             }
         }
     }
