@@ -34,7 +34,7 @@ pipeline {
                 """
                 sh """
                     curl -X POST -H "Content-Type: application/json" -d '{
-                        "text": "K6 Performance Test Completed. View the summary here: ${env.BUILD_URL}artifact/summary.json"
+                        "text": "K6 Performance Test Completed. View the summary here: ${env.BUILD_URL}execution/node/3/ws/"
                     }' ${teamsWebhook}
                 """
             }
