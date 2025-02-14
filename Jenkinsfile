@@ -10,8 +10,15 @@ pipeline {
                 }
             }
             steps {
-                sh 'k6 run quickPizzaTestScript.js --quiet'
+                sh 'mkdir -p testReport'
+                sh 'k6 run quickPizzaTestScript.js --quiet > testReport/summary.json'
             }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'testReport/summary.json', fingerprint: true
         }
     }
 }
