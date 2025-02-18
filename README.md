@@ -113,7 +113,7 @@ export function handleSummary(data) {
 ```
 Run the test and open `summary.html` in a browser for detailed insights.
 
-##Enable K6 Web Dashboard
+## Enable K6 Web Dashboard
 
 If you want to enable the K6 Web Dashboard while running tests, set the K6_WEB_DASHBOARD environment variable before executing the script. The method depends on your operating system:
 ```sh
