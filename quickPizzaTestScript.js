@@ -31,10 +31,11 @@ export const options = {
   scenarios: {
     smoke: {
       exec: 'pizzaUserFlow',
-      executor: 'constant-vus',
+      executor: 'shared-iterations',
       tags: {stage: 'smoke'},
       vus: SmokeOptions.vus,
-      duration: SmokeOptions.duration,
+      maxDuration: SmokeOptions.duration,
+      iterations: 1,
       env: {MYVAR: 'smoke'},
     },
     load: {
@@ -202,11 +203,11 @@ export function pizzaUserFlow() {
   });
 }
 
-// export function handleSummary(data) {
-//   return {
-//     "summary.html": htmlReport(data),
-//   };
-// }
+export function handleSummary(data) {
+  return {
+    'summary.html': htmlReport(data),
+  };
+}
 
 /* Interpreting end-of-test summary report - https://github.com/grafana/k6-learn/blob/main/Modules/II-k6-Foundations/03-Understanding-k6-results.md
     execution: local
